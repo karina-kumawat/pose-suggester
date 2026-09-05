@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PoseCraft — Find Your Perfect Pose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-content">
+      <span class="logo">📸 PoseCraft</span>
+      <div id="authArea">
+        <button id="loginBtn">Login</button>
+        <button id="favoritesBtn" class="hidden">❤️ Favorites</button>
+        <span id="userGreeting" class="hidden"></span>
+        <button id="logoutBtn" class="hidden">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Find Your Perfect Pose</h1>
+    <p>Pick a place, choose who's with you, get pose ideas instantly.</p>
+    <input type="text" id="searchBox" placeholder="Search a place (e.g. cafe, beach, temple)...">
+  </section>
+
+  <main id="categoryView">
+    <div id="settingsGrid" class="settings-grid"></div>
+  </main>
+
+  <main id="poseView" class="hidden">
+    <button id="backBtn">← Back to all places</button>
+    <h2 id="selectedSettingTitle"></h2>
+
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-people="All">All</button>
+      <button class="filter-tab" data-people="Alone">Alone</button>
+      <button class="filter-tab" data-people="Couple">Couple</button>
+      <button class="filter-tab" data-people="Group">Group</button>
+    </div>
+
+    <div id="poseContainer" class="pose-grid"></div>
+  </main>
+
+  <main id="favoritesView" class="hidden">
+    <button id="backFromFavBtn">← Back to all places</button>
+    <h2>❤️ My Favorite Poses</h2>
+    <div id="favoritesContainer" class="pose-grid"></div>
+  </main>
+
+  <!-- Login/Signup Modal -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-box">
+      <button id="closeModal" class="close-btn">×</button>
+      <div class="tabs">
+        <button id="loginTab" class="tab active">Login</button>
+        <button id="signupTab" class="tab">Sign Up</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="signupForm" class="auth-form hidden">
+        <input type="text" id="signupName" placeholder="Full Name" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <p id="authError" class="error"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Built by Karina — full-stack project with Node.js, Express & MySQL</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
