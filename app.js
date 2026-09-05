@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5001/api';
+const API_BASE = 'https://pose-suggester-production.up.railway.app/api';
 
 let currentSetting = null;
 let currentPeopleFilter = 'All';
